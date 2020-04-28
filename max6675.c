@@ -147,18 +147,17 @@ void max6675(int argc, char *argv[])
         {
             if (dev)
             {
-                float ps_data;
-                float brightness;
+                float temp_data;
 
                 /* read the sensor */
-                ps_data = max6675_read_temp(dev);
-                if (ps_data == 0)
+                temp_data = max6675_read_temp(dev);
+                if (temp_data == 0)
                 {
                     rt_kprintf("object is not proximity of sensor \n");
                 }
                 else
                 {
-                    rt_kprintf("max6675 read : %d.%d\n", (uint16_t)ps_data, ((uint16_t)(ps_data * 100)) % 100);
+                    rt_kprintf("max6675 read : %d.%d\n", (uint16_t)temp_data, ((uint16_t)(temp_data * 100)) % 100);
                 }
 
             }

@@ -67,7 +67,7 @@ int rt_hw_max6675_port(void)
 
     cfg.intf.dev_name  = MAX667_SPI_BUS;
 
-    rt_hw_ap3216c_init("max6675", &cfg);
+    rt_hw_max6675_init("max6675", &cfg);
 
     return RT_EOK;
 }
@@ -82,5 +82,5 @@ INIT_ENV_EXPORT(rt_hw_max6675_port);
 
 维护人:
 
-- 维护：[Jonas](https://github.com/Jonas)
-- 主页：https://github.com/RT-Thread-packages/max6675
+- 维护：[Jonas](https://github.com/JonasWen)
+- 主页：https://github.com/JonasWen/max6675

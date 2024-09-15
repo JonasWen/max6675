@@ -8,7 +8,7 @@
  * 2020-04-28     jonas        the first version
  */
 
-#include "sensor_maxim_max6675.h"
+#include "maxim_max6675_sensor_v1.h"
 #include "max6675.h"
 
 #define DBG_TAG "sensor.maxim.max6675"
@@ -38,7 +38,7 @@ static rt_size_t _max6675_polling_get_data(rt_sensor_t sensor, struct rt_sensor_
     return 1;
 }
 
-static rt_size_t max6675_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE max6675_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     RT_ASSERT(buf);
 

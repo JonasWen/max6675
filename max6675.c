@@ -13,7 +13,6 @@
 #include <rtdevice.h>
 #include <finsh.h>
 
-#include <sensor.h>
 #include "max6675.h"
 
 #ifdef PKG_USING_MAX6675
@@ -123,12 +122,12 @@ void max6675(int argc, char *argv[])
 
     if (argc > 1)
     {
-        if (!strcmp(argv[1], "probe"))
+        if (!rt_strcmp(argv[1], "probe"))
         {
             if (argc > 2)
             {
                 /* initialize the sensor when first probe */
-                if (!dev || strcmp(dev->spi->parent.parent.name, argv[2]))
+                if (!dev || rt_strcmp(dev->spi->parent.parent.name, argv[2]))
                 {
                     /* deinit the old device */
                     if (dev)
@@ -143,7 +142,7 @@ void max6675(int argc, char *argv[])
                 rt_kprintf("max6675 probe <dev_name>   - probe sensor by given name\n");
             }
         }
-        else if (!strcmp(argv[1], "read"))
+        else if (!rt_strcmp(argv[1], "read"))
         {
             if (dev)
             {

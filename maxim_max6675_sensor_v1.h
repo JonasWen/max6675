@@ -11,7 +11,17 @@
 #ifndef SENSOR_MAXIM_MAX6675_H__
 #define SENSOR_MAXIM_MAX6675_H__
 
-#include <sensor.h>
+#include <rtthread.h>
+#include <rtdevice.h>
+
+#if defined(RT_VERSION_CHECK)
+    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 0, 2))
+        #define RT_SIZE_TYPE   rt_ssize_t
+    #else
+        #define RT_SIZE_TYPE   rt_size_t
+    #endif
+#endif
+
 #include "max6675.h"
 
 
